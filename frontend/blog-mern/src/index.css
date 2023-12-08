@@ -1,0 +1,14 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  font-family: 'Roboto', sans-serif;
+}
+
+/* .grid-item:nth-of-type(odd) {
+  margin-top: 0;
+}
+.grid-item:nth-of-type(even) {
+  margin-top: 100px;
+} */
