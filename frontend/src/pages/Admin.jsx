@@ -1,7 +1,6 @@
 import { Link } from 'react-router-dom';
 import Navbar from '../components/Navbar';
-
-import ActionCard from '../components/actionCard';
+import ActionCard from '../components/ActionCard';
 
 // eslint-disable-next-line react/prop-types
 function Admin() {
