@@ -12,12 +12,15 @@ function NewBlogForm() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const res = await axios.post('http://localhost:8000/api/posts/', {
-        title,
-        content,
-        author,
-        thumbnail,
-      });
+      const res = await axios.post(
+        'https://dom-blog-67c0fda80c7d.herokuapp.com/api/posts/',
+        {
+          title,
+          content,
+          author,
+          thumbnail,
+        }
+      );
       console.log(res);
       if (res.status === 201 || res.status === 200) {
         addNewPost(res.data);

@@ -9,7 +9,9 @@ function BlogCard({ includeDeleteFeatures }) {
   const { posts, setPosts } = useContext(BlogContext);
   const deletePost = async (postId) => {
     try {
-      await axios.delete(`http://localhost:8000/api/posts/${postId}`);
+      await axios.delete(
+        `https://dom-blog-67c0fda80c7d.herokuapp.com/api/posts/${postId}`
+      );
       const updatedPosts = posts.filter((post) => post._id !== postId);
       setPosts(updatedPosts);
     } catch (error) {

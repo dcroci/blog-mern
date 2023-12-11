@@ -11,7 +11,9 @@ export const BlogProvider = ({ children }) => {
   useEffect(() => {
     const getAllPosts = async () => {
       try {
-        const res = await fetch('http://localhost:8000/api/posts');
+        const res = await fetch(
+          'https://dom-blog-67c0fda80c7d.herokuapp.com/api/posts'
+        );
         if (!res.ok) {
           throw new Error(`HTTP error! Status: ${res.status}`);
         }
@@ -27,7 +29,9 @@ export const BlogProvider = ({ children }) => {
   // Define getPostByID outside of useEffect
   const getPostByID = async (id) => {
     try {
-      const res = await axios.get(`http://localhost:8000/api/posts/${id}`);
+      const res = await axios.get(
+        `https://dom-blog-67c0fda80c7d.herokuapp.com/api/posts/${id}`
+      );
       setActivePost(res.data.data);
     } catch (error) {
       console.error('Error fetching post:', error.message);
