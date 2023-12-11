@@ -13,6 +13,9 @@ function MoreArticles() {
 
   return (
     <div className="col-start-4 px-2 flex flex-col gap-6 pt-4">
+      <p className="text-3xl font-bold text-center text-[#4fadeb] bg-gray-500 border-b-2 border-black p-2">
+        Other Articles
+      </p>
       {otherPosts.map((post) => (
         <div key={post._id}>
           <img
@@ -23,7 +26,7 @@ function MoreArticles() {
             alt=""
           />
           <Link onClick={() => getPostByID(post._id)} to={`/post/${post._id}`}>
-            <h2 className="text-2xl font-bold pb-2 hover:underline">
+            <h2 className="text-2xl font-bold py-2 hover:underline">
               {post.title}
             </h2>
           </Link>

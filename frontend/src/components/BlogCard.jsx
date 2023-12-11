@@ -76,14 +76,14 @@ function BlogCard({ includeDeleteFeatures }) {
   return (
     <div className="w-full py-3 grid grid-cols-1 lg:grid-cols-2 gap-7  mx-auto px-2">
       {allPosts}
-      {!includeDeleteFeatures && (
+      {/* {!includeDeleteFeatures && (
         <Link
           to="/admin"
           className="fixed bottom-0 m-4 right-0 p-2 border-black border-4 rounded-md bg-gray-400"
         >
           <p>Admin? Add a new post</p>
         </Link>
-      )}
+      )} */}
     </div>
   );
 }
