@@ -12,7 +12,7 @@ mongoose.connect(db).then(() => {
 });
 
 // Import routes
-const postRoutes = require('./routes/postRoutes'); // Adjust the path according to your file structure
+const postRoutes = require('./routes/postRoutes');
 
 // Use routes
 app.use('/api/posts', postRoutes);
