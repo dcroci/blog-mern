@@ -3,8 +3,7 @@ import BlogContext from '../contexts/BlogContext';
 import { Link } from 'react-router-dom';
 
 function MoreArticles() {
-  const { posts, activePost, setActivePost, getPostByID } =
-    useContext(BlogContext);
+  const { posts, activePost, getPostByID } = useContext(BlogContext);
   const [otherPosts, setOtherPosts] = useState([]);
 
   useEffect(() => {
@@ -13,7 +12,7 @@ function MoreArticles() {
 
   return (
     <div className="col-start-4 px-2 flex flex-col gap-6 pt-4">
-      <p className="text-3xl font-bold text-center text-[#4fadeb] bg-gray-500 border-b-2 border-black p-2">
+      <p className="text-3xl font-bold text-center text-white bg-gray-500 border-b-2 border-black p-2">
         Other Articles
       </p>
       {otherPosts.map((post) => (

@@ -1,9 +1,10 @@
+/* eslint-disable react/prop-types */
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
-function Navbar() {
+function Navbar({ setSearchValue, searchValue }) {
   const [showNav, setShowNav] = useState(false);
   return (
-    <nav className="bg-[#4fadeb]">
+    <nav className="bg-[#4fadeb] ">
       <div className="py-6 px-4 grid grid-cols-4 justify-between max-w-[1280px] w-full mx-auto items-center ">
         <Link to={'/'}>
           <div className="flex items-center row-start-1 col-start-1">
@@ -43,7 +44,7 @@ function Navbar() {
             viewBox="0 0 24 24"
             strokeWidth={1.5}
             stroke="white"
-            className="w-8 h-8 row-start-1 col-start-4 ml-auto cursor-pointer"
+            className="w-8 h-8 row-start-1 col-start-4 ml-auto cursor-pointer transition duration-500 ease-in-out"
             onClick={() => {
               setShowNav((prevState) => !prevState);
             }}
@@ -56,8 +57,8 @@ function Navbar() {
           </svg>
         )}
         {showNav ? (
-          <div className="flex flex-col w-full gap-8 row-start-2 col-start-3 col-end-5 text-right">
-            <div className="flex items-center justify-end text-right gap-2 w-[150px] ml-auto pt-6">
+          <div className="flex flex-col w-full gap-8 row-start-2 col-start-3 col-end-5 text-right ">
+            <div className="flex items-center justify-end text-right gap-2 w-[150px] ml-auto pt-6 ">
               <h2 className="text-2xl text-white">Home</h2>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -65,7 +66,7 @@ function Navbar() {
                 viewBox="0 0 24 24"
                 strokeWidth={1.5}
                 stroke="currentColor"
-                className="w-8 h-8 bg-white rounded-full p-1"
+                className="w-8 h-8 bg-white rounded-full p-1 "
               >
                 <path
                   strokeLinecap="round"
@@ -74,7 +75,7 @@ function Navbar() {
                 />
               </svg>
             </div>
-            <div className="flex items-center justify-end text-right gap-2 w-[150px] ml-auto">
+            <div className="flex items-center justify-end text-right gap-2 w-[150px] ml-auto ">
               <h2 className="text-2xl text-white">About</h2>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -117,6 +118,10 @@ function Navbar() {
             name="search"
             id="search"
             className="rounded-full p-2 w-[180px] sm:w-[400px] md:w-[600px]"
+            onChange={(e) => {
+              setSearchValue(e.target.value);
+            }}
+            value={searchValue}
           />
           <svg
             xmlns="http://www.w3.org/2000/svg"

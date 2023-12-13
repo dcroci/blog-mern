@@ -1,5 +1,5 @@
 /* eslint-disable react/prop-types */
-import { useContext, useEffect } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import BlogCard from '../components/BlogCard';
 import Navbar from '../components/Navbar';
 import BlogContext from '../contexts/BlogContext';
@@ -11,9 +11,10 @@ function Home() {
     setActivePost(null);
     document.title = "Dom's Blog";
   }, [activePost]);
+  const [searchValue, setSearchValue] = useState('');
   return (
     <>
-      <Navbar />
+      <Navbar setSearchValue={setSearchValue} searchValue={searchValue} />
       <div className="w-full flex flex-col gap-2 max-w-[1280px] mx-auto px-4 ">
         <h1 className="text-4xl font-bold pt-4">Blog posts</h1>
         <p className="text-gray-400 border-b-2 border-gray-500 py-2">
@@ -21,7 +22,7 @@ function Home() {
         </p>
       </div>
       <div className="w-full flex  max-w-[1280px] mx-auto px-2">
-        <BlogCard includeDeleteFeatures={false} />
+        <BlogCard includeDeleteFeatures={false} searchValue={searchValue} />
       </div>
       <Footer />
     </>
