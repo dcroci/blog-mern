@@ -4,6 +4,7 @@ import BlogCard from '../components/BlogCard';
 import Navbar from '../components/Navbar';
 import BlogContext from '../contexts/BlogContext';
 import Footer from '../components/Footer';
+import SecondaryNavbar from '../components/SecondaryNavbar';
 
 function Home() {
   const { setActivePost, activePost } = useContext(BlogContext);
@@ -14,7 +15,11 @@ function Home() {
   const [searchValue, setSearchValue] = useState('');
   return (
     <>
-      <Navbar setSearchValue={setSearchValue} searchValue={searchValue} />
+      <Navbar />
+      <SecondaryNavbar
+        setSearchValue={setSearchValue}
+        searchValue={searchValue}
+      />
       <div className="w-full flex flex-col gap-2 max-w-[1280px] mx-auto px-4 ">
         <h1 className="text-4xl font-bold pt-4">Blog posts</h1>
         <p className="text-gray-400 border-b-2 border-gray-500 py-2">

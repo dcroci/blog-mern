@@ -1,7 +1,8 @@
 /* eslint-disable react/prop-types */
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
-function Navbar({ setSearchValue, searchValue }) {
+import HamburgerIcon from './HamburgerIcon';
+function Navbar() {
   const [showNav, setShowNav] = useState(false);
   return (
     <nav className="bg-[#4fadeb] ">
@@ -20,23 +21,7 @@ function Navbar({ setSearchValue, searchValue }) {
           </div>
         </Link>
         {!showNav ? (
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            viewBox="0 0 24 24"
-            strokeWidth={1.5}
-            stroke="white"
-            className="w-8 h-8 row-start-1 col-start-4 ml-auto cursor-pointer"
-            onClick={() => {
-              setShowNav((prevState) => !prevState);
-            }}
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
-            />
-          </svg>
+          <HamburgerIcon setShowNav={setShowNav} />
         ) : (
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -111,30 +96,6 @@ function Navbar({ setSearchValue, searchValue }) {
             </div>
           </div>
         ) : null}
-
-        <div className="flex items-center gap-2 row-start-1 col-start-2 col-end-4 relative place-self-center">
-          <input
-            type="search"
-            name="search"
-            id="search"
-            className="rounded-full p-2 w-[180px] sm:w-[400px] md:w-[600px]"
-            onChange={(e) => {
-              setSearchValue(e.target.value);
-            }}
-            value={searchValue}
-          />
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 24 24"
-            className="w-8 h-8 absolute right-2 fill-gray-500"
-          >
-            <path
-              fillRule="evenodd"
-              d="M10.5 3.75a6.75 6.75 0 100 13.5 6.75 6.75 0 000-13.5zM2.25 10.5a8.25 8.25 0 1114.59 5.28l4.69 4.69a.75.75 0 11-1.06 1.06l-4.69-4.69A8.25 8.25 0 012.25 10.5z"
-              clipRule="evenodd"
-            />
-          </svg>
-        </div>
       </div>
     </nav>
   );

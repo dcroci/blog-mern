@@ -2,13 +2,9 @@ function ContactBox() {
   return (
     <div className="px-2 h-fit">
       <div className="bg-[#181a1b] text-white w-full relative mt-6">
+        <img src="/bg-dc.jpg" alt="profile background" className="" />
         <img
-          src="./../../public/bg-dc.jpg"
-          alt="profile background"
-          className=""
-        />
-        <img
-          src="./../../public/selfie.jpg"
+          src="/selfie.jpg"
           alt="profile picture"
           className="w-1/3 mx-auto rounded-full absolute left-0 right-0 top-[10%] bottom-0 border-2 border-black"
         />
