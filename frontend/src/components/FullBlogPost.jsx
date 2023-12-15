@@ -23,10 +23,10 @@ function FullBlogPost() {
     <>
       <div className="grid grid-cols-1 md:grid-cols-4 mx-auto max-w-[1280px]">
         <div className="col-span-full w-full pt-4 mx-auto flex flex-col">
-          <h2 className="text-4xl font-bold mx-auto pt-4">
+          <h2 className="text-4xl font-bold mx-auto pt-4 text-center">
             {activePost.post.title}
           </h2>
-          <p className="border-b-2 border-gray-500  text-gray-500 py-2 pb-4 mx-auto w-full text-center">
+          <p className=" text-gray-500 py-2 pb-4 mx-auto ">
             by: {activePost.post.author}
           </p>
         </div>
