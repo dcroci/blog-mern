@@ -39,7 +39,7 @@ function BlogCard({ includeDeleteFeatures, searchValue }) {
           post.thumbnail ||
           'https://www.achieversit.com/management/uploads/course_image/react-img21.png'
         }
-        className="rounded w-full shadow-lg shadow-gray-500"
+        className="rounded w-full max-h-72 shadow-lg shadow-gray-500"
         alt="Post Thumbnail"
       />
       <div className="flex flex-col content-between h-full ">

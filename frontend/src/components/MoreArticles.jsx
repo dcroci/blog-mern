@@ -23,6 +23,7 @@ function MoreArticles() {
               'https://www.achieversit.com/management/uploads/course_image/react-img21.png'
             }
             alt=""
+            className="w-full max-h-44"
           />
           <Link onClick={() => getPostByID(post._id)} to={`/post/${post._id}`}>
             <h2 className="text-2xl font-bold py-2 hover:underline">
