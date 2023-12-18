@@ -53,9 +53,7 @@ function BlogCard({ includeDeleteFeatures, searchValue }) {
             {post.content ? post.content.slice(0, 120) + '...' : ''}
           </p>
           <div className="flex">
-            <p className="text-l text-gray-400">
-              by: {post.author + ' ' + '• '}
-            </p>
+            <p className="text-l text-gray-400">{post.author + ' • ' + ' '}</p>
             {post.createdAt && (
               <p className="text-l text-gray-400">
                 {new Date(post.createdAt).toDateString()}
