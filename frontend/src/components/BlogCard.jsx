@@ -44,8 +44,10 @@ function BlogCard({ includeDeleteFeatures, searchValue, sortFilter }) {
   }
 
   const filteredPosts = searchValue
-    ? posts.filter((post) =>
-        post.title.toLowerCase().includes(searchValue.toLowerCase())
+    ? posts.filter(
+        (post) =>
+          post.title.toLowerCase().includes(searchValue.toLowerCase()) ||
+          'No results found'
       )
     : posts;
 
@@ -55,10 +57,7 @@ function BlogCard({ includeDeleteFeatures, searchValue, sortFilter }) {
       key={post._id}
     >
       <img
-        src={
-          post.thumbnail ||
-          'https://www.achieversit.com/management/uploads/course_image/react-img21.png'
-        }
+        src={post.thumbnail}
         className="rounded w-full max-h-72 shadow-lg shadow-gray-500"
         alt="Post Thumbnail"
       />
@@ -73,12 +72,9 @@ function BlogCard({ includeDeleteFeatures, searchValue, sortFilter }) {
             {post.content ? post.content.slice(0, 120) + '...' : ''}
           </p>
           <div className="flex">
-            <p className="text-l text-gray-400">{post.author + ' • ' + ' '}</p>
-            {post.createdAt && (
-              <p className="text-l text-gray-400">
-                {new Date(post.createdAt).toDateString()}
-              </p>
-            )}
+            <p className="text-l text-gray-400">
+              {post.author + ' • ' + new Date(post.createdAt).toDateString()}
+            </p>
           </div>
 
           {includeDeleteFeatures && (

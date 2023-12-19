@@ -7,6 +7,8 @@ import Create from './pages/Create.jsx';
 import Delete from './pages/Delete.jsx';
 import Update from './pages/Update.jsx';
 import { BlogProvider } from './contexts/BlogContext.jsx';
+import ScrollToTop from './components/ScrollToTop.jsx';
+
 // import axios from 'axios';
 function App() {
   const [activePostID, setActivePostID] = useState(null);
@@ -14,6 +16,7 @@ function App() {
   return (
     <BlogProvider>
       <BrowserRouter>
+        <ScrollToTop />
         <Routes>
           <Route
             path="/"
