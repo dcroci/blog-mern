@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 /* eslint-disable react/prop-types */
 import { useContext, useEffect, useState } from 'react';
 import BlogCard from '../components/BlogCard';
@@ -8,17 +9,20 @@ import SecondaryNavbar from '../components/SecondaryNavbar';
 
 function Home() {
   const { setActivePost, activePost } = useContext(BlogContext);
+  const [searchValue, setSearchValue] = useState('');
+  const [sortFilter, setSortFilter] = useState('default');
   useEffect(() => {
     setActivePost(null);
     document.title = "Dom's Blog";
   }, [activePost]);
-  const [searchValue, setSearchValue] = useState('');
+
   return (
     <>
       <Navbar />
       <SecondaryNavbar
         setSearchValue={setSearchValue}
         searchValue={searchValue}
+        setSortFilter={setSortFilter}
       />
       <div className="w-full flex flex-col gap-2 max-w-[1280px] mx-auto px-4 ">
         <h1 className="text-4xl font-bold pt-4">Blog posts</h1>
@@ -27,7 +31,11 @@ function Home() {
         </p>
       </div>
       <div className="w-full flex  max-w-[1280px] mx-auto px-2">
-        <BlogCard includeDeleteFeatures={false} searchValue={searchValue} />
+        <BlogCard
+          includeDeleteFeatures={false}
+          searchValue={searchValue}
+          sortFilter={sortFilter}
+        />
       </div>
       <Footer />
     </>

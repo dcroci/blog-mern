@@ -2,7 +2,7 @@
 import FilterPosts from './FilterPosts';
 import SearchBar from './SearchBar';
 
-function SecondaryNavbar({ searchValue, setSearchValue }) {
+function SecondaryNavbar({ searchValue, setSearchValue, setSortFilter }) {
   return (
     <div className="bg-gray-300">
       <div className="py-2 px-4 grid grid-cols-4 justify-between max-w-[1280px] w-full mx-auto items-center ">
@@ -13,7 +13,7 @@ function SecondaryNavbar({ searchValue, setSearchValue }) {
           />
         </div>
         <div className="col-start-4 place-self-end">
-          <FilterPosts />
+          <FilterPosts setSortFilter={setSortFilter} />
         </div>
       </div>
     </div>
