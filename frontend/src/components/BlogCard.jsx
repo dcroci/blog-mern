@@ -44,10 +44,8 @@ function BlogCard({ includeDeleteFeatures, searchValue, sortFilter }) {
   }
 
   const filteredPosts = searchValue
-    ? posts.filter(
-        (post) =>
-          post.title.toLowerCase().includes(searchValue.toLowerCase()) ||
-          'No results found'
+    ? posts.filter((post) =>
+        post.title.toLowerCase().includes(searchValue.toLowerCase())
       )
     : posts;
 

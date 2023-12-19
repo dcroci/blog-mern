@@ -13,7 +13,8 @@ function Home() {
   const [sortFilter, setSortFilter] = useState('default');
   useEffect(() => {
     setActivePost(null);
-    document.title = "Dom's Blog";
+    document.title =
+      "Dominik Croci's Blog - React JS, Web Development Trends & Insights";
   }, [activePost]);
 
   return (
