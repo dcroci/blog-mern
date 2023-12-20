@@ -35,13 +35,9 @@ function MoreArticles() {
           </p>
           <div className="flex">
             <p className="text-l text-gray-400">
-              by: {post.author + ' ' + '•'}
+              by:{' '}
+              {post.author + ' • ' + new Date(post.createdAt).toDateString()}{' '}
             </p>
-            {post.createdAt && (
-              <p className="text-l text-gray-400">
-                {new Date(post.createdAt).toDateString()}
-              </p>
-            )}
           </div>
         </div>
       ))}

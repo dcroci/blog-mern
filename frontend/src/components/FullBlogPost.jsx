@@ -1,21 +1,24 @@
 /* eslint-disable react/prop-types */
 import { useContext, useEffect } from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams, useLocation } from 'react-router-dom';
 import BlogContext from '../contexts/BlogContext';
 import Footer from './Footer';
 import ContactBox from './ContactBox';
 import MoreArticles from './MoreArticles';
 import ReactMarkdown from 'react-markdown';
+import SharePostBtn from './SharePostBtn';
 
 function FullBlogPost() {
   const { activePost, getPostByID } = useContext(BlogContext);
   const { id } = useParams();
+  const { pathname } = useLocation();
 
   useEffect(() => {
     if (id) {
       getPostByID(id);
     }
-  }, []);
+    console.log(pathname);
+  }, [pathname]);
 
   //potential bug ^^^
 
@@ -30,15 +33,18 @@ function FullBlogPost() {
             by: {activePost.post.author}
           </p>
         </div>
-        <div className="px-2 col-span-3 w-full">
-          <img
-            src={
-              activePost.post.thumbnail ||
-              'https://www.achieversit.com/management/uploads/course_image/react-img21.png'
-            }
-            className=" w-full mx-auto my-6 "
-            alt=""
-          />
+        <div className="px-2 col-span-3 w-full ">
+          <div className="relative">
+            <img
+              src={activePost.post.thumbnail}
+              className=" w-full mx-auto mbß-6 "
+              alt=""
+            />
+            <SharePostBtn
+              activePost={activePost}
+              classes={'absolute top-0 right-0'}
+            />
+          </div>
 
           <p className="text-xl p-2 mx-auto leading-9">
             <ReactMarkdown>{activePost.post.content}</ReactMarkdown>

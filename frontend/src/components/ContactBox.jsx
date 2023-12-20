@@ -1,7 +1,7 @@
 function ContactBox() {
   return (
     <div className="px-2 h-fit">
-      <div className="bg-[#181a1b] text-white w-full relative mt-6">
+      <div className="bg-[#181a1b] text-white w-full relative">
         <img src="/bg-dc.jpg" alt="profile background" className="" />
         <img
           src="/selfie.jpg"
