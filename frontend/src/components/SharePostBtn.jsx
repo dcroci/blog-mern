@@ -23,12 +23,6 @@ function SharePostBtn({ activePost, classes }) {
       className={`flex flex-col justify-end gap-2 ${classes} bg-black/75 p-4 border-white border-b-4 text-white  min-w-[104px] transition-all delay-1000`}
     >
       <div className="flex items-center gap-3 justify-center">
-        <p
-          onClick={toggleLinksModal}
-          className="cursor-pointer text-center text-2xl font-bold"
-        >
-          Share
-        </p>
         <svg
           xmlns="http://www.w3.org/2000/svg"
           fill="none"
@@ -36,7 +30,8 @@ function SharePostBtn({ activePost, classes }) {
           strokeWidth="1.5"
           stroke="currentColor"
           data-slot="icon"
-          className="w-6 h-6"
+          className="w-8 h-8 cursor-pointer"
+          onClick={toggleLinksModal}
         >
           <path
             strokeLinecap="round"
@@ -47,7 +42,7 @@ function SharePostBtn({ activePost, classes }) {
       </div>
 
       {showLinks && (
-        <div className="grid grid-cols-4 sm:grid-cols-2 lg:grid-cols-1 gap-4 animate-fade-up place-items-center">
+        <div className="grid grid-cols-4 sm:grid-cols-2 lg:grid-cols-1 gap-4 animate-fade-up place-items-center mt-4">
           <EmailShareButton
             url={`https://dominik-croci-blog.netlify.app${pathname}`}
             subject={`Check out this Blog by ${activePost.post.author}: ${activePost.post.title} 🚀`}
