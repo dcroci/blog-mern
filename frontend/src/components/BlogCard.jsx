@@ -42,8 +42,15 @@ function BlogCard({ includeDeleteFeatures, searchValue, sortFilter }) {
       </div>
     );
   }
-
-  const filteredPosts = searchValue
+  let filteredPosts =
+    sortFilter === 'name'
+      ? posts.sort((a, b) => a.name.localeCompare(b.name))
+      : sortFilter === 'newest'
+      ? posts.sort((a, b) => b.date - a.date)
+      : sortFilter === 'oldest'
+      ? posts.sort((a, b) => a.date - b.date)
+      : posts;
+  filteredPosts = searchValue
     ? posts.filter((post) =>
         post.title.toLowerCase().includes(searchValue.toLowerCase())
       )

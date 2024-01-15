@@ -1,9 +1,9 @@
 /* eslint-disable react/prop-types */
 import { Link } from 'react-router-dom';
 import SearchBar from './SearchBar';
-import FilterPosts from './FilterPosts';
+// import FilterPosts from './FilterPosts';
 
-function Navbar({ searchValue, setSearchValue, setSortFilter, showSearch }) {
+function Navbar({ searchValue, setSearchValue, showSearch }) {
   return (
     <nav className="bg-[#4fadeb] ">
       <div className="py-6 px-4 grid grid-cols-4 justify-between max-w-[1280px] w-full mx-auto items-center ">
@@ -31,9 +31,10 @@ function Navbar({ searchValue, setSearchValue, setSortFilter, showSearch }) {
                 setSearchValue={setSearchValue}
               />
             </div>
-            <div className="col-start-4 place-self-end">
+            {/* filter in development */}
+            {/* <div className="col-start-4 place-self-end">
               <FilterPosts setSortFilter={setSortFilter} />
-            </div>
+            </div> */}
           </>
         )}
       </div>
