@@ -16,14 +16,14 @@ function MoreArticles() {
         Other Articles
       </p>
       {otherPosts.map((post) => (
-        <div key={post._id}>
+        <div key={post._id} className=" mx-auto max-w-2xl">
           <img
             src={
               post.thumbnail ||
               'https://www.achieversit.com/management/uploads/course_image/react-img21.png'
             }
             alt=""
-            className="w-full max-h-44"
+            className="w-full h-72  md:h-40"
           />
           <Link onClick={() => getPostByID(post._id)} to={`/post/${post._id}`}>
             <h2 className="text-2xl font-bold py-2 hover:underline">

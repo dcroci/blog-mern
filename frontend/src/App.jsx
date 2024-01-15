@@ -12,7 +12,7 @@ import ScrollToTop from './components/ScrollToTop.jsx';
 // import axios from 'axios';
 function App() {
   const [activePostID, setActivePostID] = useState(null);
-
+  const [showSearch, setShowSearch] = useState(true);
   return (
     <BlogProvider>
       <BrowserRouter>
@@ -24,11 +24,22 @@ function App() {
               <Home
                 setActivePostID={setActivePostID}
                 activePostID={activePostID}
+                setShowSearch={setShowSearch}
+                showSearch={showSearch}
               />
             }
           ></Route>
           <Route path="/admin" element={<Admin />}></Route>
-          <Route path="/post/:id" element={<Post id={activePostID} />}></Route>
+          <Route
+            path="/post/:id"
+            element={
+              <Post
+                id={activePostID}
+                showSearch={showSearch}
+                setShowSearch={setShowSearch}
+              />
+            }
+          ></Route>
           <Route path="/create" element={<Create />} />
           <Route
             path="/delete"

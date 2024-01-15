@@ -51,7 +51,7 @@ function BlogCard({ includeDeleteFeatures, searchValue, sortFilter }) {
 
   const renderPosts = (post) => (
     <div
-      className="flex flex-col gap-6 mx-auto w-full grid-item relative"
+      className="flex flex-col gap-6 mx-auto w-full grid-item relative max-w-xl"
       key={post._id}
     >
       <img

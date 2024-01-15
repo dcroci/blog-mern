@@ -8,7 +8,7 @@ import MoreArticles from './MoreArticles';
 import ReactMarkdown from 'react-markdown';
 import SharePostBtn from './SharePostBtn';
 
-function FullBlogPost() {
+function FullBlogPost({ setShowSearch }) {
   const { activePost, getPostByID } = useContext(BlogContext);
   const { id } = useParams();
   const { pathname } = useLocation();
@@ -16,6 +16,7 @@ function FullBlogPost() {
   useEffect(() => {
     if (id) {
       getPostByID(id);
+      setShowSearch(false);
     }
     console.log(pathname);
   }, [pathname]);

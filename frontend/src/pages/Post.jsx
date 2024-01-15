@@ -4,7 +4,7 @@ import FullBlogPost from '../components/FullBlogPost';
 import Navbar from '../components/Navbar';
 import BlogContext from '../contexts/BlogContext';
 
-function Post({ id }) {
+function Post({ id, showSearch, setShowSearch }) {
   const { activePost, getPostByID } = useContext(BlogContext);
 
   useEffect(() => {
@@ -21,8 +21,8 @@ function Post({ id }) {
 
   return (
     <>
-      <Navbar />
-      <FullBlogPost />
+      <Navbar showSearch={showSearch} />
+      <FullBlogPost setShowSearch={setShowSearch} />
     </>
   );
 }
