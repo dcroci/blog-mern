@@ -6,10 +6,10 @@ import SearchBar from './SearchBar';
 function Navbar({ searchValue, setSearchValue, showSearch }) {
   return (
     <nav className="bg-[#4fadeb] ">
-      <div className="py-6 px-4 grid grid-cols-4 justify-between max-w-[1280px] w-full mx-auto items-center ">
+      <div className="py-6 px-4 grid grid-cols-3 justify-between max-w-[1280px] w-full mx-auto items-center ">
         <Link
           to={'/'}
-          className="flex justify-center w-full col-span-4 mb-6 md:col-span-1 md:inline md:mb-0 md:w-min"
+          // className="flex justify-center w-full col-span-4 mb-6 md:col-span-1 md:inline md:mb-0 md:w-min"
         >
           <div className="flex items-center row-start-1 col-start-1">
             <svg
@@ -25,7 +25,7 @@ function Navbar({ searchValue, setSearchValue, showSearch }) {
         </Link>
         {showSearch && (
           <>
-            <div className="w-full col-start-1 col-end-3 sm:col-end-4 md:col-start-2 md:col-end-4 md:place-self-center">
+            <div className="w-full col-span-2 md:place-self-center">
               <SearchBar
                 searchValue={searchValue}
                 setSearchValue={setSearchValue}
